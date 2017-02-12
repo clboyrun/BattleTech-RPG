@@ -81,6 +81,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Components\Menus\Scripts\CharacterCreationMenu.cs" />
+    <Compile Include="Assets\Components\Menus\Scripts\EngineCalls.cs" />
+    <Compile Include="Assets\Components\Menus\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Components\Player\Scripts\BaseStatistics.cs" />
   </ItemGroup>
   <ItemGroup>
