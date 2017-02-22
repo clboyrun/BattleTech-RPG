@@ -217,45 +217,104 @@ public class BaseStatistics : MonoBehaviour {
         Running, Science, SecuritySystems, SensorOperations, SmallArms, Stealth, Strategy, Streetwise, SupportWeapons,
         Surgery, Survival, Swimming, Tactics, Technician, ThrownWeapons, Tracking, Training, ZeroGOperations
     }
+	
+	public static class SubSkill
+	{
+		public enum Acrobatics
+		{ FreeFall, Gymnastics }
+		
+		public enum AnimalHandling
+		{ Herding, Riding, Training }
+		
+		public enum Art
+		{ Dance, Drawing, Music, Painting, Poetry, Sculpture, Songwriting, Writing }
+		
+		public enum Career
+		{ }
+		
+		public enum Communications
+		{ BlackBox, ConventionalElectroMagnetic, HyperpulseGenerator }
+		
+		public enum Driving
+		{ GroundVehicles, RailVehicles, SeaVehicles }
+		
+		public enum Gunnery
+		{ Aerospace, AirVehicle, Battlesuit, GroundVehicle, Mech, ProtoMech, SeaVehicle, Spacecraft, Turret }
+		
+		public enum Interest
+		{ History, Literature, Holo-Games, Sports Statistics }
+		
+		public enum Language
+		{ }
+		
+		public enum MedTech
+		{ General, Veterinary }
+		
+		public enum Navigation
+		{ Ground, Air, Sea, Space, KFJump }
+		
+		public enum Piloting
+		{ Aerospace, AirVehicle, Battlesuit, GroundVehicle, Mech, ProtoMech, RailVehicle, SeaVehicle, Spacecraft }
+		
+		public enum Prestidigatation
+		{ PickPocket, Quickdraw, SleightOfHand }
+		
+		public enum Protocol
+		{ }
+		
+		public enum Science
+		{ Biology, Chemistry, Mathmatics, Physics }
+		
+		public enum SecuritySystems
+		{ Electronic, Mechanical }
+		
+		public enum Streetwise
+		{ }
+		
+		public enum Surgery
+		{ General, Veterinary }
+		
+		public enum Survival
+		{ Arctic, Desert, Forest, Ocean, Mountain, Jungle }
+		
+		public enum Tactics
+		{ Infantry, Land, Sea, Air, Space }
+		
+		public enum Technician
+		{ Aeronautics, Cybernetics, Electronic, Jets, Mechanical, Myomer, Nuclear, Weapons }
+		
+		public enum ThrownWeapons
+		{ Blades, BluntWeapons }
+		
+		public enum Tracking
+		{ Urban, Wilds }
+	}
 
     public class Skill
     {
-        private int experience = 0;
-
         public Skills SkillName { get; set; }
-        public Attribute[] Links { get; set; }
-        public int TargetNumber { get; set; }
-        public Complexity Complexity { get; set; }
 
         private BaseStatistics parent;
+        private int experience = 0;
 
         public Skill()
         {
             SkillName = Skills.Acrobatics;
-            Links = new Attribute[0];
-            TargetNumber = 0;
-            Complexity = Complexity.SimpleBasic;
             parent = new BaseStatistics();
         }
 
-        public Skill(Skills skillName, Attribute link, int targetNumber, Complexity complexity, BaseStatistics _parent)
+        public Skill(Skills skillName, BaseStatistics _parent)
         {
             SkillName = skillName;
-            Links = new Attribute[] { link };
-            TargetNumber = targetNumber;
-            Complexity = Complexity;
             parent = _parent;
+			configureSkill();
         }
-
-        public Skill(Skills skillName, Attribute link1, Attribute link2, int targetNumber, Complexity complexity, BaseStatistics _parent)
-        {
-            SkillName = skillName;
-            Links = new Attribute[] { link1, link2 };
-            TargetNumber = targetNumber;
-            Complexity = Complexity;
-            parent = _parent;
-        }
-
+		
+		private configureSkill()
+		{
+			
+		}
+		
         public int Experience { get { return experience; } set { experience = value; } }
 
         public int Level
